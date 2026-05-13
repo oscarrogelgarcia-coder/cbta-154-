@@ -1,0 +1,205 @@
+export default function CBTA154Page() {
+  const carreras = [
+    {
+      nombre: 'Agropecuario',
+      color: 'bg-green-600',
+      descripcion: 'Producción agrícola, manejo de animales y técnicas de cultivo.',
+      icono: '🌱',
+    },
+    {
+      nombre: 'Contabilidad',
+      color: 'bg-blue-600',
+      descripcion: 'Administración, registros financieros y facturación.',
+      icono: '📊',
+    },
+    {
+      nombre: 'Ofimática',
+      color: 'bg-purple-600',
+      descripcion: 'Computación, hojas de cálculo y diseño digital.',
+      icono: '💻',
+    },
+    {
+      nombre: 'Encuesta',
+      color: 'bg-yellow-500',
+      descripcion: 'Tu opinión nos ayuda a mejorar la orientación académica.',
+      icono: '📝',
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-gray-100 font-sans">
+      {/* Navbar */}
+      <header className="bg-green-700 text-white shadow-lg">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-green-700 font-bold">
+              CBTA
+            </div>
+            <div>
+              <h1 className="text-xl font-bold">CBTA 154</h1>
+              <p className="text-sm opacity-80">Explora tu futuro</p>
+            </div>
+          </div>
+
+          <nav className="hidden md:flex gap-8 text-sm font-medium">
+            <a href="#inicio" className="hover:text-green-200">Inicio</a>
+            <a href="#carreras" className="hover:text-green-200">Carreras</a>
+            <a href="#encuesta" className="hover:text-green-200">Encuesta</a>
+            <a href="#contacto" className="hover:text-green-200">Contacto</a>
+          </nav>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section id="inicio" className="max-w-7xl mx-auto px-6 py-12 grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 className="text-5xl md:text-6xl font-extrabold leading-tight text-gray-900">
+            EXPLORA <span className="text-green-600">TU FUTURO</span>
+          </h2>
+
+          <p className="mt-6 text-lg text-gray-700 leading-relaxed">
+            Conoce las carreras del CBTA 154, descubre sus actividades,
+            beneficios y áreas laborales para tomar mejores decisiones.
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-4">
+            <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-2xl shadow-lg transition">
+              Ver carreras
+            </button>
+
+            <button className="bg-white border border-gray-300 hover:bg-gray-100 px-6 py-3 rounded-2xl shadow transition">
+              Responder encuesta
+            </button>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-3xl shadow-2xl p-6">
+          <img
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
+            alt="Estudiantes"
+            className="rounded-2xl w-full h-[420px] object-cover"
+          />
+        </div>
+      </section>
+
+      {/* Carreras */}
+      <section id="carreras" className="max-w-7xl mx-auto px-6 py-10">
+        <h3 className="text-4xl font-bold text-center text-gray-900 mb-12">
+          Carreras Disponibles
+        </h3>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {carreras.map((carrera, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-3xl shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300"
+            >
+              <div className={`${carrera.color} p-6 text-white text-center`}>
+                <div className="text-5xl">{carrera.icono}</div>
+                <h4 className="text-2xl font-bold mt-4">{carrera.nombre}</h4>
+              </div>
+
+              <div className="p-6">
+                <p className="text-gray-600 leading-relaxed">
+                  {carrera.descripcion}
+                </p>
+
+                <button
+                  className={`mt-6 w-full ${carrera.color} hover:opacity-90 text-white py-3 rounded-xl font-semibold transition`}
+                >
+                  Conocer más
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Características */}
+      <section className="bg-white py-16 mt-12">
+        <div className="max-w-7xl mx-auto px-6">
+          <h3 className="text-4xl font-bold text-center mb-12 text-gray-900">
+            Características del Proyecto
+          </h3>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              'Interfaz moderna y fácil de usar',
+              'Información clara de cada carrera',
+              'Diseño adaptable a celular y PC',
+              'Encuestas para recibir opiniones',
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="bg-gray-100 rounded-3xl p-8 text-center shadow-md"
+              >
+                <div className="text-5xl mb-4">✨</div>
+                <p className="text-gray-700 font-medium">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Encuesta */}
+      <section id="encuesta" className="max-w-7xl mx-auto px-6 py-16">
+        <div className="bg-gradient-to-r from-green-600 to-green-800 rounded-3xl p-10 text-white shadow-2xl grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <h3 className="text-4xl font-bold mb-6">¡Queremos conocer tu opinión!</h3>
+
+            <p className="text-lg opacity-90 leading-relaxed">
+              Escanea el código QR o responde nuestra encuesta para ayudarnos
+              a mejorar la orientación académica para los estudiantes.
+            </p>
+
+            <button className="mt-8 bg-white text-green-700 font-bold px-6 py-3 rounded-2xl hover:bg-gray-100 transition">
+              Responder encuesta
+            </button>
+          </div>
+
+          <div className="flex justify-center">
+            <div className="bg-white p-6 rounded-3xl shadow-2xl">
+              <img
+                src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=CBTA154"
+                alt="QR"
+                className="rounded-xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer id="contacto" className="bg-gray-900 text-white py-10 mt-10">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+          <div>
+            <h4 className="text-2xl font-bold">CBTA 154</h4>
+            <p className="mt-4 text-gray-400">
+              Plataforma interactiva para orientación académica.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-xl font-semibold mb-4">Secciones</h4>
+            <ul className="space-y-2 text-gray-400">
+              <li>Inicio</li>
+              <li>Carreras</li>
+              <li>Encuesta</li>
+              <li>Contacto</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-xl font-semibold mb-4">Contacto</h4>
+            <p className="text-gray-400">correo@cbta154.edu.mx</p>
+            <p className="text-gray-400">Jiutepec, Morelos</p>
+          </div>
+        </div>
+
+        <div className="text-center text-gray-500 mt-10 border-t border-gray-700 pt-6">
+          © 2026 CBTA 154 - Todos los derechos reservados.
+        </div>
+      </footer>
+    </div>
+  );
+}
